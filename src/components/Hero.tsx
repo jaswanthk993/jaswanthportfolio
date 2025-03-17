@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({
+  const scrollToEducation = () => {
+    const educationSection = document.getElementById("education");
+    if (educationSection) {
+      educationSection.scrollIntoView({
         behavior: "smooth"
       });
     }
@@ -20,7 +20,7 @@ const Hero = () => {
           {/* Hero Image */}
           <div className="order-1 md:order-2 w-full md:w-2/5 flex justify-center">
             <div className="relative w-64 h-64 sm:w-72 sm:h-72">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-full opacity-20 blur-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent opacity-20 blur-lg"></div>
               <div className="absolute inset-4 bg-white dark:bg-navy-dark rounded-full"></div>
               <img 
                 src="/lovable-uploads/4069c271-02a8-4b37-a51a-436ab4a54eee.png" 
@@ -112,10 +112,10 @@ const Hero = () => {
         
         <div className="mt-16 flex justify-center">
           <button 
-            onClick={scrollToProjects} 
+            onClick={scrollToEducation} 
             className="flex flex-col items-center text-foreground/70 hover:text-primary transition-colors"
           >
-            <span className="text-sm mb-2">Scroll to see my work</span>
+            <span className="text-sm mb-2">Scroll to see my education</span>
             <ArrowDown size={20} className="animate-bounce" />
           </button>
         </div>
