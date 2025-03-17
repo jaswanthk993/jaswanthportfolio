@@ -1,5 +1,5 @@
 
-import { CalendarDays, Briefcase } from "lucide-react";
+import { CalendarDays, Briefcase, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ExperienceProps {
@@ -13,27 +13,59 @@ interface ExperienceProps {
 
 const experienceData: ExperienceProps[] = [
   {
-    title: "Cloud Computing Intern",
+    title: "Cloud Intern",
     company: "ExcelR",
-    duration: "June 2024 - July 2024",
+    duration: "June 2024 - July 2024 (2 months)",
     description: "Virtual internship focused on cloud computing technologies, gaining hands-on experience in Azure. Assisted in deploying cloud infrastructure and optimizing automation processes for real-world applications.",
     technologies: ["Azure", "Cloud Infrastructure", "Automation"],
     type: "work"
   },
   {
-    title: "Cloud Engineering Intern",
+    title: "EV Design using MATLAB",
+    company: "Pantechelearning",
+    duration: "May 2024 - June 2024 (2 months)",
+    description: "Participated in a specialized internship focused on electric vehicle design using MATLAB. Developed simulation models and optimization algorithms for EV components.",
+    technologies: ["MATLAB", "EV Design", "Simulation"],
+    type: "work"
+  },
+  {
+    title: "Cloud Intern",
     company: "Edunet Foundation",
-    duration: "February 2024 - March 2024",
+    duration: "February 2024 - March 2024 (2 months)",
     description: "Focused on implementing cloud-native applications and learning cloud security best practices. Engaged in hands-on labs using Azure and AWS to develop scalable cloud-based solutions.",
     technologies: ["Azure", "AWS", "Cloud Security"],
     type: "work"
   },
   {
-    title: "Azure Intern",
-    company: "Future Ready Talent (Microsoft)",
-    duration: "November 2023 - January 2024",
-    description: "Developed projects utilizing Microsoft Azure and GitHub tools while solving real-world problems. Gained industry-oriented exposure to cloud services, AI, and DevOps methodologies.",
-    technologies: ["Azure", "GitHub", "AI", "DevOps"],
+    title: "Cloud Trainee",
+    company: "Techwing",
+    duration: "August 2023 - October 2023 (3 months)",
+    description: "Underwent comprehensive cloud training program covering major cloud platforms and services. Participated in hands-on projects to implement cloud infrastructure and solutions.",
+    technologies: ["Cloud Services", "Infrastructure", "DevOps"],
+    type: "work"
+  },
+  {
+    title: "Full-stack Developer",
+    company: "Pantechelearning",
+    duration: "July 2023 - September 2023 (3 months)",
+    description: "Developed full-stack web applications using modern JavaScript frameworks. Collaborated with team members to design, implement and deploy web solutions for clients.",
+    technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
+    type: "work"
+  },
+  {
+    title: "Artificial Intelligence Intern",
+    company: "Edunet Foundation",
+    duration: "June 2023 - July 2023 (2 months)",
+    description: "Gained practical experience in AI and IBM skills. Grateful for the incredible learning opportunity, mentorship, and exposure to AI innovation. Applied skills and knowledge to create positive impact in the field.",
+    technologies: ["AI", "Machine Learning", "IBM Watson"],
+    type: "work"
+  },
+  {
+    title: "Future Ready Talent Internship",
+    company: "Microsoft",
+    duration: "November 2023 - January 2024 (3 months)",
+    description: "Virtual internship program providing opportunity to learn in-demand technology skills for solving real-world problems using Microsoft Azure & GitHub tools. The internship was conducted in partnership with Microsoft, Future Skills Prime, and GitHub to train learners in industry-oriented technology.",
+    technologies: ["Microsoft Azure", "GitHub", "Industry Skills"],
     type: "work"
   },
   {
@@ -65,7 +97,7 @@ const ExperienceItem = ({ item, index }: { item: ExperienceProps, index: number 
         <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
           item.type === "work" ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"
         }`}>
-          {item.type === "work" ? <Briefcase size={20} /> : <CalendarDays size={20} />}
+          {item.type === "work" ? <Briefcase size={20} /> : <GraduationCap size={20} />}
         </div>
         {index !== experienceData.length - 1 && (
           <div className="absolute top-10 bottom-0 left-1/2 w-0.5 -translate-x-1/2 bg-border"></div>
@@ -84,7 +116,7 @@ const ExperienceItem = ({ item, index }: { item: ExperienceProps, index: number 
         {item.technologies && (
           <div className="flex flex-wrap gap-2">
             {item.technologies.map((tech, techIndex) => (
-              <span key={techIndex} className="tech-badge">
+              <span key={techIndex} className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary">
                 {tech}
               </span>
             ))}
