@@ -14,12 +14,12 @@ interface EducationItemProps {
 
 const educationData: EducationItemProps[] = [
   {
-    institution: "Godavari Institute of Engineering & Technology (GIER)",
+    institution: "Godavari Institute of Engineering & Technology (GIET)",
     degree: "B.Tech, Electrical and Electronics Engineering",
     duration: "November 2021 - April 2025",
     description: "Currently pursuing a B.Tech degree focusing on electrical and electronics engineering with additional coursework in programming and technology.",
     gpa: "7.40",
-    location: "India"
+    location: "Rajahmundry, India"
   },
   {
     institution: "Narayana Junior College",
@@ -27,14 +27,15 @@ const educationData: EducationItemProps[] = [
     duration: "June 2019 - May 2021",
     description: "Completed intermediate education with a focus on Mathematics, Physics, and Chemistry.",
     gpa: "71%",
-    location: "India"
+    location: "Rajahmundry, India"
   },
   {
     institution: "Government High School",
     degree: "School Education",
     duration: "May 2019",
-    description: "Completed foundational education, developing core academic skills and fundamental knowledge.",
-    location: "India"
+    description: "Completed foundational education with excellence, developing core academic skills and fundamental knowledge.",
+    gpa: "9.7",
+    location: "Rajahmundry, India"
   }
 ];
 
