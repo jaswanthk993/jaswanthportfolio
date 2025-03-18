@@ -9,6 +9,7 @@ import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
+import ThreeAnimation from "@/components/ThreeAnimation";
 
 // Import the necessary dependencies
 import { motion, useScroll, useSpring } from "framer-motion";
@@ -42,6 +43,12 @@ const Index = () => {
       
       <Navbar />
       <Hero />
+      
+      {/* 3D Animation showcase */}
+      <div className="container mx-auto px-4 py-8 -mt-24 mb-12">
+        <ThreeAnimation />
+      </div>
+      
       <About />
       <Skills />
       <Projects />
