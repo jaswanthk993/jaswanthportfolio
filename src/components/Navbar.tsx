@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,46 +28,59 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={cn(
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/90 dark:bg-navy-dark/90 shadow-md backdrop-blur-sm"
-          : "bg-transparent"
-      }`}
+          ? "bg-[#F8F9FB]/95 shadow-sm backdrop-blur-sm"
+          : "bg-[#F8F9FB]"
+      )}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold gradient-text">
+        <Link to="/" className="text-xl font-bold text-[#2271FF]">
           Jaswanth Kumar
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           <Link
-            to="/#education"
-            className="text-foreground/80 hover:text-primary transition-colors"
+            to="/"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
           >
-            Education
+            Home
           </Link>
           <Link
-            to="/#projects"
-            className="text-foreground/80 hover:text-primary transition-colors"
+            to="/#about"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
           >
-            Projects
+            About
           </Link>
           <Link
             to="/#skills"
-            className="text-foreground/80 hover:text-primary transition-colors"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
           >
             Skills
           </Link>
           <Link
+            to="/#projects"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
+          >
+            Projects
+          </Link>
+          <Link
             to="/#experience"
-            className="text-foreground/80 hover:text-primary transition-colors"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
           >
             Experience
           </Link>
           <Link
+            to="/#education"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
+          >
+            Education
+          </Link>
+          <Link
             to="/#contact"
-            className="text-foreground/80 hover:text-primary transition-colors"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
           >
             Contact
           </Link>
@@ -78,7 +92,7 @@ const Navbar = () => {
             href="https://github.com/jaswanthk993"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/70 hover:text-primary transition-colors"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
             aria-label="GitHub"
           >
             <Github size={20} />
@@ -87,26 +101,23 @@ const Navbar = () => {
             href="https://www.linkedin.com/in/jaswanth-kumar-/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/70 hover:text-primary transition-colors"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
             aria-label="LinkedIn"
           >
             <Linkedin size={20} />
           </a>
           <a
             href="mailto:jaswanthk993@gmail.com"
-            className="text-foreground/70 hover:text-primary transition-colors"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
             aria-label="Email"
           >
             <Mail size={20} />
           </a>
-          <Button asChild>
-            <a href="/#contact">Get in Touch</a>
-          </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-gray-600"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -116,35 +127,49 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background dark:bg-navy-dark shadow-lg animate-fade-in">
+        <div className="md:hidden bg-white shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-6 flex flex-col gap-6">
             <Link
-              to="/#education"
-              className="text-lg font-medium py-2 border-b border-border"
+              to="/"
+              className="text-lg font-medium py-2 border-b border-gray-100"
               onClick={toggleMenu}
             >
-              Education
+              Home
             </Link>
             <Link
-              to="/#projects"
-              className="text-lg font-medium py-2 border-b border-border"
+              to="/#about"
+              className="text-lg font-medium py-2 border-b border-gray-100"
               onClick={toggleMenu}
             >
-              Projects
+              About
             </Link>
             <Link
               to="/#skills"
-              className="text-lg font-medium py-2 border-b border-border"
+              className="text-lg font-medium py-2 border-b border-gray-100"
               onClick={toggleMenu}
             >
               Skills
             </Link>
             <Link
+              to="/#projects"
+              className="text-lg font-medium py-2 border-b border-gray-100"
+              onClick={toggleMenu}
+            >
+              Projects
+            </Link>
+            <Link
               to="/#experience"
-              className="text-lg font-medium py-2 border-b border-border"
+              className="text-lg font-medium py-2 border-b border-gray-100"
               onClick={toggleMenu}
             >
               Experience
+            </Link>
+            <Link
+              to="/#education"
+              className="text-lg font-medium py-2 border-b border-gray-100"
+              onClick={toggleMenu}
+            >
+              Education
             </Link>
             <Link
               to="/#contact"
@@ -159,7 +184,7 @@ const Navbar = () => {
                 href="https://github.com/jaswanthk993"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-primary transition-colors"
+                className="text-gray-600 hover:text-[#2271FF] transition-colors"
                 aria-label="GitHub"
               >
                 <Github size={22} />
@@ -168,14 +193,14 @@ const Navbar = () => {
                 href="https://www.linkedin.com/in/jaswanth-kumar-/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-primary transition-colors"
+                className="text-gray-600 hover:text-[#2271FF] transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={22} />
               </a>
               <a
                 href="mailto:jaswanthk993@gmail.com"
-                className="text-foreground/70 hover:text-primary transition-colors"
+                className="text-gray-600 hover:text-[#2271FF] transition-colors"
                 aria-label="Email"
               >
                 <Mail size={22} />

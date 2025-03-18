@@ -52,7 +52,7 @@ const ProjectCard = ({
   project: ProjectProps;
 }) => {
   return (
-    <Card className="h-full overflow-hidden hover:shadow-lg transition-all">
+    <Card className="h-full overflow-hidden hover:shadow-lg transition-all border border-gray-100">
       <div className="aspect-video w-full overflow-hidden">
         <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform hover:scale-105 duration-300" />
       </div>
@@ -63,21 +63,21 @@ const ProjectCard = ({
       <CardContent>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map(tech => (
-            <span key={tech} className="px-3 py-1 rounded-full text-xs font-medium bg-secondary text-foreground transition-all hover:bg-accent hover:text-white">
+            <span key={tech} className="px-3 py-1 rounded-full text-xs font-medium bg-secondary text-foreground transition-all hover:bg-[#2271FF] hover:text-white">
               {tech}
             </span>
           ))}
         </div>
       </CardContent>
       <CardFooter className="flex gap-3">
-        <Button variant="outline" size="sm" asChild>
+        <Button variant="outline" size="sm" asChild className="border-gray-200 hover:border-[#2271FF] hover:text-[#2271FF]">
           <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
             <Github size={16} />
             <span className="text-left">Code</span>
           </a>
         </Button>
         {project.demoLink && (
-          <Button size="sm" asChild>
+          <Button size="sm" asChild className="bg-[#2271FF] hover:bg-[#1a5cd1]">
             <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
               <ExternalLink size={16} />
               <span>Demo</span>
@@ -97,44 +97,44 @@ const Projects = () => {
     : projectsData.filter(project => project.category === activeFilter);
 
   return (
-    <section id="projects" className="section-padding bg-secondary/50">
+    <section id="projects" className="section-padding bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
-          <div className="w-32 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
+          <div className="w-32 h-1 bg-[#2271FF] mx-auto mb-6"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto">
             A collection of my recent development work, showcasing skills in cloud computing, AI, and full-stack development.
           </p>
         </div>
 
         <div className="flex justify-center mb-10">
           <Tabs defaultValue="all" className="w-full max-w-md">
-            <TabsList className="grid grid-cols-4 w-full">
+            <TabsList className="grid grid-cols-4 w-full bg-gray-100">
               <TabsTrigger 
                 value="all" 
                 onClick={() => setActiveFilter("all")}
-                className="data-[state=active]:bg-primary data-[state=active]:text-white"
+                className="data-[state=active]:bg-[#2271FF] data-[state=active]:text-white"
               >
-                All Projects
+                All
               </TabsTrigger>
               <TabsTrigger 
                 value="web" 
                 onClick={() => setActiveFilter("web")}
-                className="data-[state=active]:bg-primary data-[state=active]:text-white"
+                className="data-[state=active]:bg-[#2271FF] data-[state=active]:text-white"
               >
                 Web
               </TabsTrigger>
               <TabsTrigger 
                 value="ai" 
                 onClick={() => setActiveFilter("ai")}
-                className="data-[state=active]:bg-primary data-[state=active]:text-white"
+                className="data-[state=active]:bg-[#2271FF] data-[state=active]:text-white"
               >
                 AI/ML
               </TabsTrigger>
               <TabsTrigger 
                 value="cloud" 
                 onClick={() => setActiveFilter("cloud")}
-                className="data-[state=active]:bg-primary data-[state=active]:text-white"
+                className="data-[state=active]:bg-[#2271FF] data-[state=active]:text-white"
               >
                 Cloud
               </TabsTrigger>
@@ -157,7 +157,7 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" asChild>
+          <Button variant="outline" size="lg" asChild className="border-gray-200 hover:border-[#2271FF] hover:text-[#2271FF]">
             <a href="https://github.com/jaswanthk993" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               <Github size={18} />
               <span>View More on GitHub</span>

@@ -69,8 +69,8 @@ export default {
 					light: '#203656'
 				},
 				tech: {
-					DEFAULT: '#8B5CF6',
-					light: '#A78BFA'
+					DEFAULT: '#2271FF',
+					light: '#4D91FF'
 				}
 			},
 			fontFamily: {
