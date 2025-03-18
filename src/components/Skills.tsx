@@ -1,17 +1,17 @@
 
-import { CheckCircle2, Code, Database, Server, Cloud, Brain } from "lucide-react";
+import { CheckCircle2, Code, Database, Server, Cloud, Brain, Languages, Certificate } from "lucide-react";
 import { motion } from "framer-motion";
 
 const skillCategories = [
   {
-    title: "Cloud Computing",
+    title: "Cloud & Azure Skills",
     icon: <Cloud className="w-6 h-6 text-primary" />,
-    skills: ["AWS S3", "AWS CloudFront", "Azure App Services", "Google Cloud AI", "Cloud Storage"]
+    skills: ["Azure AI", "Azure App", "Azure Storage Accounts", "Cloud Infrastructure", "Cloud Security"]
   },
   {
     title: "AI & Machine Learning",
     icon: <Brain className="w-6 h-6 text-primary" />,
-    skills: ["Vertex AI", "Azure Cognitive Services", "Sentiment Analysis", "ML Model Development", "Data Processing"]
+    skills: ["IBM Watson", "AI Technologies", "Sentiment Analysis", "Machine Learning Models", "Data Processing"]
   },
   {
     title: "Frontend Development",
@@ -27,17 +27,21 @@ const skillCategories = [
     title: "Database Management",
     icon: <Database className="w-6 h-6 text-primary" />,
     skills: ["SQL", "NoSQL", "Data Modeling", "MongoDB", "Cloud Databases"]
-  },
-  {
-    title: "DevOps",
-    icon: <Server className="w-6 h-6 text-primary" />,
-    skills: ["CI/CD", "Docker", "Infrastructure as Code", "Monitoring", "Deployment"]
   }
 ];
 
-const otherSkills = [
-  "Problem Solving", "Time Management", "Leadership", "Communication", 
-  "Logic Building", "Git & GitHub", "Enterprise Design Thinking"
+const languages = [
+  "Hindi (Professional Working)",
+  "Telugu (Native or Bilingual)",
+  "English (Professional Working)"
+];
+
+const certifications = [
+  "Investment Banking",
+  "Email Writing",
+  "Time Management",
+  "Enterprise Design Thinking Practitioner",
+  "Getting Started with Enterprise Data Science"
 ];
 
 const Skills = () => {
@@ -77,10 +81,56 @@ const Skills = () => {
           ))}
         </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {/* Languages Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="bg-secondary/70 p-8 rounded-lg"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <Languages className="w-6 h-6 text-primary" />
+              <h3 className="text-xl font-medium">Languages</h3>
+            </div>
+            <ul className="space-y-2">
+              {languages.map((language, index) => (
+                <li key={index} className="flex items-center gap-2 text-foreground/80">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>{language}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Certifications Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="bg-secondary/70 p-8 rounded-lg"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <Certificate className="w-6 h-6 text-primary" />
+              <h3 className="text-xl font-medium">Certifications</h3>
+            </div>
+            <ul className="space-y-2">
+              {certifications.map((cert, index) => (
+                <li key={index} className="flex items-center gap-2 text-foreground/80">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>{cert}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+
         <div className="bg-secondary/70 p-8 rounded-lg">
           <h3 className="text-xl font-medium mb-6 text-center">Other Professional Skills</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {otherSkills.map((skill, index) => (
+            {["Problem Solving", "Leadership", "Communication", "Logic Building", "Git & GitHub", "MATLAB", "Teamwork"].map((skill, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
