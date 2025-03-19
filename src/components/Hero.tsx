@@ -1,3 +1,4 @@
+
 import { ArrowDown, Linkedin, Github, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -88,7 +89,7 @@ const Hero = () => {
             duration: 0.5,
             delay: 0.5
           }} className="flex gap-6 justify-center md:justify-start">
-              <a href="https://www.linkedin.com/in/jaswanth-kumar" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors" aria-label="LinkedIn Profile">
+              <a href="https://www.linkedin.com/in/jaswanth-kumar-/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors" aria-label="LinkedIn Profile">
                 <Linkedin size={24} />
               </a>
               <a href="https://github.com/jaswanthk993" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors" aria-label="GitHub Profile">
