@@ -2,6 +2,7 @@
 import { GraduationCap, CalendarDays, School, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { HoverAnimation } from "@/components/ui/hover-animation";
 
 interface EducationItemProps {
   institution: string;
@@ -48,36 +49,38 @@ const EducationItem = ({ item, index }: { item: EducationItemProps, index: numbe
       viewport={{ once: true }}
       className="mb-8 last:mb-0"
     >
-      <Card className="overflow-hidden border-primary/10 hover:border-primary/30 transition-colors">
-        <CardContent className="p-6">
-          <div className="flex items-start gap-4">
-            <div className="bg-primary/10 p-3 rounded-full text-primary flex-shrink-0">
-              {index === 0 ? <GraduationCap size={24} /> : 
-               index === 1 ? <BookOpen size={24} /> : 
-               <School size={24} />}
-            </div>
-            <div>
-              <h3 className="text-xl font-bold">{item.institution}</h3>
-              <p className="text-lg font-medium text-foreground/90 mb-1">{item.degree}</p>
-              <div className="flex items-center text-sm text-foreground/70 mb-1">
-                <CalendarDays size={16} className="mr-1" />
-                <span>{item.duration}</span>
+      <HoverAnimation variant="lift" delay={index * 50}>
+        <Card className="overflow-hidden border-primary/10 hover:border-primary/30 transition-colors">
+          <CardContent className="p-6">
+            <div className="flex items-start gap-4">
+              <div className="bg-primary/10 p-3 rounded-full text-primary flex-shrink-0 transition-colors hover:bg-primary hover:text-white">
+                {index === 0 ? <GraduationCap size={24} /> : 
+                index === 1 ? <BookOpen size={24} /> : 
+                <School size={24} />}
               </div>
-              {item.location && (
-                <p className="text-sm text-foreground/70 mb-3">
-                  Location: {item.location}
-                </p>
-              )}
-              <p className="text-foreground/80">{item.description}</p>
-              {item.gpa && (
-                <p className="mt-2 font-medium text-primary">
-                  GPA: {item.gpa}
-                </p>
-              )}
+              <div>
+                <h3 className="text-xl font-bold">{item.institution}</h3>
+                <p className="text-lg font-medium text-foreground/90 mb-1">{item.degree}</p>
+                <div className="flex items-center text-sm text-foreground/70 mb-1">
+                  <CalendarDays size={16} className="mr-1" />
+                  <span>{item.duration}</span>
+                </div>
+                {item.location && (
+                  <p className="text-sm text-foreground/70 mb-3">
+                    Location: {item.location}
+                  </p>
+                )}
+                <p className="text-foreground/80">{item.description}</p>
+                {item.gpa && (
+                  <p className="mt-2 font-medium text-primary">
+                    GPA: {item.gpa}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </HoverAnimation>
     </motion.div>
   );
 };

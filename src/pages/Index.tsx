@@ -12,6 +12,7 @@ import { useEffect } from "react";
 
 // Import the necessary dependencies
 import { motion, useScroll, useSpring } from "framer-motion";
+import { HoverAnimation } from "@/components/ui/hover-animation";
 
 const Index = () => {
   const { scrollYProgress } = useScroll();
@@ -40,7 +41,9 @@ const Index = () => {
         style={{ scaleX }}
       />
       
-      <Navbar />
+      <HoverAnimation variant="lift" className="sticky top-0 z-40">
+        <Navbar />
+      </HoverAnimation>
       <Hero />
       <About />
       <Skills />
