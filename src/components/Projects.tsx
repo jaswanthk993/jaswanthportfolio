@@ -1,3 +1,4 @@
+
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -59,6 +60,15 @@ const projectsData: ProjectProps[] = [
     demoLink: "https://example.com",
     githubLink: "https://github.com/jaswanthk993/ai-powered-pdf-knowledge-assistant-using-google-palm",
     technologies: ["Google PaLM", "Python", "FastAPI", "React", "LangChain"],
+    category: "ai"
+  },
+  {
+    title: "Energy Demand Forecasting using ARIMA",
+    description: "Developed a time-series model to predict energy load. Trained ARIMA model with Pandas and statsmodels to forecast energy load accurately and preprocessed time-series data with visualized predictions.",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/jaswanthk993/energy-demand-forecasting-arima",
+    technologies: ["Python", "ARIMA", "Pandas", "statsmodels", "Matplotlib", "Time Series"],
     category: "ai"
   }
 ];
