@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 interface ProjectProps {
   title: string;
   description: string;
@@ -13,31 +14,55 @@ interface ProjectProps {
   technologies: string[];
   category: "all" | "web" | "ai" | "cloud";
 }
-const projectsData: ProjectProps[] = [{
-  title: "Static Website Deployment",
-  description: "Hosted a responsive static website on AWS S3 with CloudFront for fast and secure content delivery.",
-  image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
-  demoLink: "https://example.com",
-  githubLink: "https://github.com/jaswanthk993/future-ready-talent-project",
-  technologies: ["AWS S3", "CloudFront", "Route 53", "HTML", "CSS", "JavaScript"],
-  category: "web"
-}, {
-  title: "Cloud-Based Mental Fitness Tracker",
-  description: "Built an AI-powered mental wellness tracker using Azure Cognitive Services for sentiment analysis.",
-  image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-  demoLink: "https://example.com",
-  githubLink: "https://github.com/jaswanthk993/Mental-fitness-tracker-with-IBM",
-  technologies: ["Azure Cognitive Services", "Azure App Services", "Python", "Flask"],
-  category: "ai"
-}, {
-  title: "Stock Price Prediction using Cloud AI",
-  description: "Developed a machine learning model on Google Cloud AI to predict stock prices in real-time.",
-  image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
-  demoLink: "https://example.com",
-  githubLink: "https://github.com/jaswanthk993/stock-prediction",
-  technologies: ["Google Cloud AI", "Vertex AI", "Python", "Flask", "Cloud Storage"],
-  category: "cloud"
-}];
+
+const projectsData: ProjectProps[] = [
+  {
+    title: "Static Website Deployment",
+    description: "Hosted a responsive static website on AWS S3 with CloudFront for fast and secure content delivery.",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/jaswanthk993/future-ready-talent-project",
+    technologies: ["AWS S3", "CloudFront", "Route 53", "HTML", "CSS", "JavaScript"],
+    category: "web"
+  },
+  {
+    title: "Cloud-Based Mental Fitness Tracker",
+    description: "Built an AI-powered mental wellness tracker using Azure Cognitive Services for sentiment analysis.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/jaswanthk993/Mental-fitness-tracker-with-IBM",
+    technologies: ["Azure Cognitive Services", "Azure App Services", "Python", "Flask"],
+    category: "ai"
+  },
+  {
+    title: "Stock Price Prediction using Cloud AI",
+    description: "Developed a machine learning model on Google Cloud AI to predict stock prices in real-time.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/jaswanthk993/stock-prediction",
+    technologies: ["Google Cloud AI", "Vertex AI", "Python", "Flask", "Cloud Storage"],
+    category: "cloud"
+  },
+  {
+    title: "AI-Driven Custom Home Design Assistant",
+    description: "Developed an intelligent home design assistant that provides personalized design recommendations using AI algorithms.",
+    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/jaswanthk993/ai-driven-custom-home-design-assistant",
+    technologies: ["Python", "TensorFlow", "React", "Node.js", "MongoDB"],
+    category: "ai"
+  },
+  {
+    title: "AI-Powered PDF Knowledge Assistant",
+    description: "Created an intelligent PDF processing system using Google PaLM for document analysis and knowledge extraction.",
+    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/jaswanthk993/ai-powered-pdf-knowledge-assistant-using-google-palm",
+    technologies: ["Google PaLM", "Python", "FastAPI", "React", "LangChain"],
+    category: "ai"
+  }
+];
+
 const ProjectCard = ({
   project
 }: {
