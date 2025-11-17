@@ -46,7 +46,7 @@ const Index = () => {
       <Hero />
       <About />
       <Skills />
-      <Projects className="bg-slate-900" />
+      <Projects className="bg-slate-950" />
       <Experience />
       <Education />
       <Certificates />
