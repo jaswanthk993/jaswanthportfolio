@@ -36,7 +36,7 @@ const Index = () => {
   }, []);
   return <div className="min-h-screen bg-background">
       {/* Progress Bar */}
-      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-[#2271FF] origin-left z-50" style={{
+      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50 shadow-[0_0_20px_rgba(34,113,255,0.6)]" style={{
       scaleX
     }} />
       
@@ -46,7 +46,7 @@ const Index = () => {
       <Hero />
       <About />
       <Skills />
-      <Projects className="bg-slate-950" />
+      <Projects />
       <Experience />
       <Education />
       <Certificates />
