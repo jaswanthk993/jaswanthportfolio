@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -14,33 +13,32 @@ import { useEffect } from "react";
 // Import the necessary dependencies
 import { motion, useScroll, useSpring } from "framer-motion";
 import { HoverAnimation } from "@/components/ui/hover-animation";
-
 const Index = () => {
-  const { scrollYProgress } = useScroll();
+  const {
+    scrollYProgress
+  } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
-  
   useEffect(() => {
     // Scroll to section if URL has hash
     if (window.location.hash) {
       const id = window.location.hash.substring(1);
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        element.scrollIntoView({
+          behavior: "smooth"
+        });
       }
     }
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-[#2271FF] origin-left z-50"
-        style={{ scaleX }}
-      />
+      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-[#2271FF] origin-left z-50" style={{
+      scaleX
+    }} />
       
       <HoverAnimation variant="lift" className="sticky top-0 z-40">
         <Navbar />
@@ -48,14 +46,12 @@ const Index = () => {
       <Hero />
       <About />
       <Skills />
-      <Projects />
+      <Projects className="bg-slate-900" />
       <Experience />
       <Education />
       <Certificates />
       <Contact />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;

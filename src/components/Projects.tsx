@@ -1,11 +1,9 @@
-
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 interface ProjectProps {
   title: string;
   description: string;
@@ -15,64 +13,55 @@ interface ProjectProps {
   technologies: string[];
   category: "all" | "web" | "ai" | "cloud";
 }
-
-const projectsData: ProjectProps[] = [
-  {
-    title: "Static Website Deployment",
-    description: "Hosted a responsive static website on AWS S3 with CloudFront for fast and secure content delivery.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/jaswanthk993/future-ready-talent-project",
-    technologies: ["AWS S3", "CloudFront", "Route 53", "HTML", "CSS", "JavaScript"],
-    category: "web"
-  },
-  {
-    title: "Cloud-Based Mental Fitness Tracker",
-    description: "Built an AI-powered mental wellness tracker using Azure Cognitive Services for sentiment analysis.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/jaswanthk993/Mental-fitness-tracker-with-IBM",
-    technologies: ["Azure Cognitive Services", "Azure App Services", "Python", "Flask"],
-    category: "ai"
-  },
-  {
-    title: "Stock Price Prediction using Cloud AI",
-    description: "Developed a machine learning model on Google Cloud AI to predict stock prices in real-time.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/jaswanthk993/stock-prediction",
-    technologies: ["Google Cloud AI", "Vertex AI", "Python", "Flask", "Cloud Storage"],
-    category: "cloud"
-  },
-  {
-    title: "AI-Driven Custom Home Design Assistant",
-    description: "Developed an intelligent home design assistant that provides personalized design recommendations using AI algorithms.",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/jaswanthk993/ai-driven-custom-home-design-assistant",
-    technologies: ["Python", "TensorFlow", "React", "Node.js", "MongoDB"],
-    category: "ai"
-  },
-  {
-    title: "AI-Powered PDF Knowledge Assistant",
-    description: "Created an intelligent PDF processing system using Google PaLM for document analysis and knowledge extraction.",
-    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/jaswanthk993/ai-powered-pdf-knowledge-assistant-using-google-palm",
-    technologies: ["Google PaLM", "Python", "FastAPI", "React", "LangChain"],
-    category: "ai"
-  },
-  {
-    title: "Energy Demand Forecasting using ARIMA",
-    description: "Developed a time-series model to predict energy load. Trained ARIMA model with Pandas and statsmodels to forecast energy load accurately and preprocessed time-series data with visualized predictions.",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/jaswanthk993/energy-demand-forecasting-arima",
-    technologies: ["Python", "ARIMA", "Pandas", "statsmodels", "Matplotlib", "Time Series"],
-    category: "ai"
-  }
-];
-
+const projectsData: ProjectProps[] = [{
+  title: "Static Website Deployment",
+  description: "Hosted a responsive static website on AWS S3 with CloudFront for fast and secure content delivery.",
+  image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
+  demoLink: "https://example.com",
+  githubLink: "https://github.com/jaswanthk993/future-ready-talent-project",
+  technologies: ["AWS S3", "CloudFront", "Route 53", "HTML", "CSS", "JavaScript"],
+  category: "web"
+}, {
+  title: "Cloud-Based Mental Fitness Tracker",
+  description: "Built an AI-powered mental wellness tracker using Azure Cognitive Services for sentiment analysis.",
+  image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+  demoLink: "https://example.com",
+  githubLink: "https://github.com/jaswanthk993/Mental-fitness-tracker-with-IBM",
+  technologies: ["Azure Cognitive Services", "Azure App Services", "Python", "Flask"],
+  category: "ai"
+}, {
+  title: "Stock Price Prediction using Cloud AI",
+  description: "Developed a machine learning model on Google Cloud AI to predict stock prices in real-time.",
+  image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+  demoLink: "https://example.com",
+  githubLink: "https://github.com/jaswanthk993/stock-prediction",
+  technologies: ["Google Cloud AI", "Vertex AI", "Python", "Flask", "Cloud Storage"],
+  category: "cloud"
+}, {
+  title: "AI-Driven Custom Home Design Assistant",
+  description: "Developed an intelligent home design assistant that provides personalized design recommendations using AI algorithms.",
+  image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80",
+  demoLink: "https://example.com",
+  githubLink: "https://github.com/jaswanthk993/ai-driven-custom-home-design-assistant",
+  technologies: ["Python", "TensorFlow", "React", "Node.js", "MongoDB"],
+  category: "ai"
+}, {
+  title: "AI-Powered PDF Knowledge Assistant",
+  description: "Created an intelligent PDF processing system using Google PaLM for document analysis and knowledge extraction.",
+  image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80",
+  demoLink: "https://example.com",
+  githubLink: "https://github.com/jaswanthk993/ai-powered-pdf-knowledge-assistant-using-google-palm",
+  technologies: ["Google PaLM", "Python", "FastAPI", "React", "LangChain"],
+  category: "ai"
+}, {
+  title: "Energy Demand Forecasting using ARIMA",
+  description: "Developed a time-series model to predict energy load. Trained ARIMA model with Pandas and statsmodels to forecast energy load accurately and preprocessed time-series data with visualized predictions.",
+  image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+  demoLink: "https://example.com",
+  githubLink: "https://github.com/jaswanthk993/energy-demand-forecasting-arima",
+  technologies: ["Python", "ARIMA", "Pandas", "statsmodels", "Matplotlib", "Time Series"],
+  category: "ai"
+}];
 const ProjectCard = ({
   project
 }: {
@@ -112,7 +101,7 @@ const Projects = () => {
   return <section id="projects" className="section-padding bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-sky-700">My Projects</h2>
           <div className="w-32 h-1 bg-[#2271FF] mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             A collection of my recent development work, showcasing skills in cloud computing, AI, and full-stack development.
