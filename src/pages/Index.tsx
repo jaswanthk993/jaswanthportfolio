@@ -8,6 +8,7 @@ import Experience from "@/components/Experience";
 import Certificates from "@/components/Certificates";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FloatingBackground from "@/components/FloatingBackground";
 import { useEffect } from "react";
 
 // Import the necessary dependencies
@@ -35,6 +36,9 @@ const Index = () => {
     }
   }, []);
   return <div className="min-h-screen bg-background">
+      {/* 3D Floating Background */}
+      <FloatingBackground />
+      
       {/* Progress Bar */}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50 shadow-[0_0_20px_rgba(34,113,255,0.6)]" style={{
       scaleX
