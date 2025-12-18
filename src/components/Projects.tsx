@@ -67,29 +67,29 @@ const ProjectCard = ({
 }: {
   project: ProjectProps;
 }) => {
-  return <Card className="h-full overflow-hidden hover:shadow-lg transition-all border border-gray-100">
+  return <Card className="h-full overflow-hidden transition-all duration-300 bg-gray-900/50 backdrop-blur-md border border-gray-800 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(34,113,255,0.3)] group">
       <div className="aspect-video w-full overflow-hidden">
-        <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform hover:scale-105 duration-300" />
+        <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300 opacity-80 group-hover:opacity-100" />
       </div>
       <CardHeader>
-        <CardTitle className="text-xl">{project.title}</CardTitle>
-        <CardDescription>{project.description}</CardDescription>
+        <CardTitle className="text-xl text-white">{project.title}</CardTitle>
+        <CardDescription className="text-gray-400">{project.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.map(tech => <span key={tech} className="px-3 py-1 rounded-full text-xs font-medium bg-secondary text-foreground transition-all hover:bg-[#2271FF] hover:text-white">
+          {project.technologies.map(tech => <span key={tech} className="px-3 py-1 rounded-full text-xs font-medium bg-gray-800/80 text-gray-300 border border-gray-700 transition-all hover:bg-primary hover:text-white hover:border-primary">
               {tech}
             </span>)}
         </div>
       </CardContent>
       <CardFooter className="flex gap-3">
-        <Button variant="outline" size="sm" asChild className="border-gray-200 hover:border-[#2271FF] hover:text-[#2271FF]">
+        <Button variant="outline" size="sm" asChild className="border-gray-700 text-gray-300 hover:border-primary hover:text-primary hover:bg-primary/10">
           <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
             <Github size={16} />
             <span className="text-left">Code</span>
           </a>
         </Button>
-        {project.demoLink && <Button size="sm" asChild className="bg-[#2271FF] hover:bg-[#1a5cd1]">
+        {project.demoLink && <Button size="sm" asChild className="bg-primary hover:bg-primary/80">
             
           </Button>}
       </CardFooter>
