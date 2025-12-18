@@ -110,17 +110,17 @@ const Projects = () => {
 
         <div className="flex justify-center mb-10">
           <Tabs defaultValue="all" className="w-full max-w-md">
-            <TabsList className="grid grid-cols-4 w-full bg-gray-100">
-              <TabsTrigger value="all" onClick={() => setActiveFilter("all")} className="data-[state=active]:bg-[#2271FF] data-[state=active]:text-white">
+            <TabsList className="grid grid-cols-4 w-full bg-gray-900/50 border border-gray-800">
+              <TabsTrigger value="all" onClick={() => setActiveFilter("all")} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-gray-400">
                 All
               </TabsTrigger>
-              <TabsTrigger value="web" onClick={() => setActiveFilter("web")} className="data-[state=active]:bg-[#2271FF] data-[state=active]:text-white">
+              <TabsTrigger value="web" onClick={() => setActiveFilter("web")} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-gray-400">
                 Web
               </TabsTrigger>
-              <TabsTrigger value="ai" onClick={() => setActiveFilter("ai")} className="data-[state=active]:bg-[#2271FF] data-[state=active]:text-white">
+              <TabsTrigger value="ai" onClick={() => setActiveFilter("ai")} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-gray-400">
                 AI/ML
               </TabsTrigger>
-              <TabsTrigger value="cloud" onClick={() => setActiveFilter("cloud")} className="data-[state=active]:bg-[#2271FF] data-[state=active]:text-white">
+              <TabsTrigger value="cloud" onClick={() => setActiveFilter("cloud")} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-gray-400">
                 Cloud
               </TabsTrigger>
             </TabsList>
