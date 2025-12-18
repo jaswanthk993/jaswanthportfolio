@@ -98,12 +98,12 @@ const ProjectCard = ({
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState<"all" | "web" | "ai" | "cloud">("all");
   const filteredProjects = activeFilter === "all" ? projectsData : projectsData.filter(project => project.category === activeFilter);
-  return <section id="projects" className="section-padding bg-white">
+  return <section id="projects" className="section-padding bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-sky-700">My Projects</h2>
           <div className="w-32 h-1 bg-[#2271FF] mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto">
             A collection of my recent development work, showcasing skills in cloud computing, AI, and full-stack development.
           </p>
         </div>
