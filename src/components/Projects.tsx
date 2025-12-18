@@ -67,7 +67,7 @@ const ProjectCard = ({
 }: {
   project: ProjectProps;
 }) => {
-  return <Card className="h-full overflow-hidden transition-all duration-300 bg-gray-900/50 backdrop-blur-md border border-gray-800 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(34,113,255,0.3)] group">
+  return <Card className="h-full overflow-hidden transition-all duration-500 bg-gray-900/50 backdrop-blur-md border border-gray-800 hover:border-primary hover:shadow-[0_0_20px_rgba(34,113,255,0.4),0_0_40px_rgba(34,113,255,0.2),0_0_60px_rgba(34,113,255,0.1)] group animate-[pulse_3s_ease-in-out_infinite] hover:animate-none relative before:absolute before:inset-0 before:rounded-lg before:p-[1px] before:bg-gradient-to-r before:from-transparent before:via-primary/50 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500 before:-z-10 before:blur-sm">
       <div className="aspect-video w-full overflow-hidden relative">
         <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300 opacity-80 group-hover:opacity-100" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent transition-opacity duration-300 group-hover:opacity-50" />
