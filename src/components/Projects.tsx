@@ -68,8 +68,9 @@ const ProjectCard = ({
   project: ProjectProps;
 }) => {
   return <Card className="h-full overflow-hidden transition-all duration-300 bg-gray-900/50 backdrop-blur-md border border-gray-800 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(34,113,255,0.3)] group">
-      <div className="aspect-video w-full overflow-hidden">
+      <div className="aspect-video w-full overflow-hidden relative">
         <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300 opacity-80 group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent" />
       </div>
       <CardHeader>
         <CardTitle className="text-xl text-white">{project.title}</CardTitle>
