@@ -5,6 +5,7 @@ import Education from "@/components/Education";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
+import Achievements from "@/components/Achievements";
 import Certificates from "@/components/Certificates";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -105,6 +106,15 @@ const Index = () => {
         transition={{ duration: 0.6 }}
       >
         <Education />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+      >
+        <Achievements />
       </motion.div>
 
       <motion.div
