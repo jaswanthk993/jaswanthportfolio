@@ -14,6 +14,14 @@ interface ProjectProps {
   category: "all" | "web" | "ai" | "cloud";
 }
 const projectsData: ProjectProps[] = [{
+  title: "AI Compliance Copilot",
+  description: "An intelligent compliance assistant that reads and analyzes policy documents, flags risks and violations, and helps teams stay compliant while building faster.",
+  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+  demoLink: "https://ai-compliance-copilot.lovable.app/",
+  githubLink: "https://github.com/jaswanthk993/ai-compliance-copilot",
+  technologies: ["Google Cloud", "Gemini AI", "React", "TypeScript", "LangChain"],
+  category: "ai"
+}, {
   title: "Static Website Deployment",
   description: "Hosted a responsive static website on AWS S3 with CloudFront for fast and secure content delivery.",
   image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
