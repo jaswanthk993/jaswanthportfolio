@@ -11,11 +11,32 @@ interface ExperienceProps {
 
 const experienceData: ExperienceProps[] = [
   {
+    title: "Contributor",
+    company: "GirlScript Summer of Code",
+    duration: "July 2025 - August 2025 (2 months)",
+    description: "Contributing to open-source projects as part of the GirlScript Summer of Code program, collaborating with developers worldwide on impactful tech solutions.",
+    technologies: ["Open Source", "Git", "GitHub", "Collaboration"]
+  },
+  {
+    title: "Google Cloud GenAI Internship",
+    company: "SmartInternz",
+    duration: "January 2025 - March 2025 (3 months)",
+    description: "Completed an intensive internship focused on Google Cloud's Generative AI capabilities, building real-world AI applications using Gemini and cloud-native technologies.",
+    technologies: ["Google Cloud", "Gemini AI", "GenAI", "Cloud Run"]
+  },
+  {
     title: "Cloud Intern",
     company: "ExcelR",
     duration: "June 2024 - July 2024 (2 months)",
     description: "Virtual internship focused on cloud computing technologies, gaining hands-on experience in Azure. Assisted in deploying cloud infrastructure and optimizing automation processes for real-world applications.",
     technologies: ["Azure", "Cloud Infrastructure", "Automation"]
+  },
+  {
+    title: "Microsoft Business Intelligence / Power BI",
+    company: "Pantechelearning",
+    duration: "June 2024 - July 2024 (2 months)",
+    description: "Completed training in Microsoft Business Intelligence tools and Power BI, developing skills in data visualization, reporting, and business analytics.",
+    technologies: ["Power BI", "Business Intelligence", "Data Analytics", "Reporting"]
   },
   {
     title: "EV Design using MATLAB",
@@ -58,6 +79,13 @@ const experienceData: ExperienceProps[] = [
     duration: "June 2023 - July 2023 (2 months)",
     description: "Gained practical experience in AI and IBM skills. Grateful for the incredible learning opportunity, mentorship, and exposure to AI innovation. Applied skills and knowledge to create positive impact in the field.",
     technologies: ["AI", "Machine Learning", "IBM Watson"]
+  },
+  {
+    title: "Python Developer Intern",
+    company: "Linta Technologies Private Limited",
+    duration: "May 2023 - June 2023 (2 months)",
+    description: "Gained valuable experience in Python development and worked on various projects. Collaborated with experienced developers to design and implement Python-based solutions, ensuring high performance and reliability. Participated in the full software development lifecycle and integrated third-party APIs.",
+    technologies: ["Python", "APIs", "Software Development"]
   }
 ];
 const ExperienceItem = ({
