@@ -15,13 +15,6 @@ interface EducationItemProps {
 
 const educationData: EducationItemProps[] = [
   {
-    institution: "Institute of Management, Technology and Finance",
-    degree: "Git GitLab GitHub Fundamentals For Software Developers, Computer Science",
-    duration: "June 2025",
-    description: "Completed comprehensive training in version control systems and collaborative software development workflows.",
-    location: "Online"
-  },
-  {
     institution: "Godavari Institute of Engineering & Technology (GIET)",
     degree: "B.Tech, Electrical and Electronics Engineering",
     duration: "November 2021 - May 2025",
