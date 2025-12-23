@@ -36,31 +36,38 @@ const About = () => {
             once: true
           }} className="space-y-6 text-lg">
               <p className="text-foreground/80">
-                I am a results-driven Senior Delivery Specialist at BoostMySites, where I help 
-                businesses transform their digital presence through modern, scalable, and 
-                high-performing websites. With hands-on expertise in end-to-end website development, 
-                project delivery, and client success management, I specialize in building tailored 
-                digital solutions that enhance brand visibility and accelerate growth.
+                I'm a product-minded AI builder who enjoys turning complex problems into simple, 
+                scalable solutions.
               </p>
               
               <p className="text-foreground/80">
-                My role bridges technology, business, and customer success — ensuring every project 
-                is delivered on time, within scope, and aligned with client goals. I thrive in 
-                collaborating with startups, SMEs, and enterprises to bring their ideas to life 
-                through intuitive, user-friendly, and conversion-focused web platforms.
+                I work at the intersection of AI, cloud platforms, and product thinking, focusing 
+                on building systems that are not just technically sound but genuinely useful for 
+                real users. I care deeply about why a problem exists before jumping into how to solve it.
               </p>
               
               <p className="text-foreground/80">
-                I am currently pursuing a B.Tech in Electrical and Electronics Engineering at GIET 
-                Engineering College. My journey is centered around the pursuit of knowledge and 
-                a drive to make a meaningful impact in the world through technology and innovation.
+                I've led and contributed to projects like AI Compliance Copilot, where I took 
+                ownership from problem definition to prototype deployment—breaking down ambiguous 
+                requirements, designing intelligent workflows, and delivering solutions on cloud infrastructure.
+              </p>
+              
+              <h3 className="text-xl font-semibold text-foreground mt-4">How I think and work</h3>
+              <ul className="text-foreground/80 list-disc list-inside space-y-1">
+                <li>Start with user pain, not features</li>
+                <li>Break ambiguity into clear, testable assumptions</li>
+                <li>Build fast, learn early, and iterate with intent</li>
+                <li>Balance product value with technical feasibility</li>
+              </ul>
+              
+              <p className="text-foreground/80 mt-4">
+                I enjoy collaborating with diverse teams, learning continuously, and working in 
+                environments that value clarity, ownership, and long-term impact.
               </p>
               
               <p className="text-foreground/80">
-                Entrepreneurship is ingrained in my very core. The excitement of nurturing ideas 
-                with the potential to revolutionize industries propels me forward. Complementing 
-                this entrepreneurial spirit is my profound fascination with AI technologies, driving 
-                me to continually learn, adapt, and innovate.
+                My goal is to build products that scale responsibly, solve meaningful problems, 
+                and create real value.
               </p>
             </motion.div>
           </div>
