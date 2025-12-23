@@ -29,23 +29,24 @@ const About = () => {
               className="space-y-6 text-lg"
             >
               <p className="text-foreground/80">
-                Hello and welcome to my profile! I am Jaswanth Kumar, an enthusiastic individual 
-                currently in pursuit of a B.Tech in Electrical and Electronics Engineering at GIET 
+                I am a results-driven Senior Delivery Specialist at BoostMySites, where I help 
+                businesses transform their digital presence through modern, scalable, and 
+                high-performing websites. With hands-on expertise in end-to-end website development, 
+                project delivery, and client success management, I specialize in building tailored 
+                digital solutions that enhance brand visibility and accelerate growth.
+              </p>
+              
+              <p className="text-foreground/80">
+                My role bridges technology, business, and customer success — ensuring every project 
+                is delivered on time, within scope, and aligned with client goals. I thrive in 
+                collaborating with startups, SMEs, and enterprises to bring their ideas to life 
+                through intuitive, user-friendly, and conversion-focused web platforms.
+              </p>
+              
+              <p className="text-foreground/80">
+                I am currently pursuing a B.Tech in Electrical and Electronics Engineering at GIET 
                 Engineering College. My journey is centered around the pursuit of knowledge and 
-                a drive to make a meaningful impact in the world.
-              </p>
-              
-              <p className="text-foreground/80">
-                Through my ongoing educational journey, I am diligently building a robust 
-                foundation in programming languages. I am not merely writing code but honing 
-                my problem-solving skills, poised to shape a future driven by technology.
-              </p>
-              
-              <p className="text-foreground/80">
-                My academic voyage transcends mere grades; it encompasses embracing 
-                challenges and ceaselessly striving for excellence. Through active engagement in 
-                extracurricular activities, I am enriching my growth experience and expanding my 
-                horizons.
+                a drive to make a meaningful impact in the world through technology and innovation.
               </p>
               
               <p className="text-foreground/80">
@@ -94,8 +95,8 @@ const About = () => {
                       <div className="flex items-center space-x-2">
                         <Briefcase className="text-primary" size={18} />
                         <div>
-                          <p className="font-medium">Cloud Computing Intern</p>
-                          <p className="text-sm text-foreground/70">Microsoft, 2023-2024</p>
+                          <p className="font-medium">Senior Delivery Specialist</p>
+                          <p className="text-sm text-foreground/70">BoostMySites, Present</p>
                         </div>
                       </div>
                     </div>

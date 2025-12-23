@@ -5,6 +5,41 @@ import { motion } from "framer-motion";
 
 const certificates = [
   {
+    title: "Build Real World AI Applications with Gemini and Imagen",
+    issuer: "Google Cloud",
+    issued: "2025",
+    summary: "Certified in building production-ready AI applications using Google's Gemini and Imagen models for generative AI solutions.",
+    link: "#"
+  },
+  {
+    title: "Develop Solutions with Azure AI Document Intelligence",
+    issuer: "Microsoft",
+    issued: "2025",
+    summary: "Expertise in developing AI-powered document processing solutions using Azure AI Document Intelligence services.",
+    link: "#"
+  },
+  {
+    title: "Postman API Fundamentals Student Expert",
+    issuer: "Postman",
+    issued: "2025",
+    summary: "Certified as a Student Expert in API fundamentals, testing, and development using Postman.",
+    link: "#"
+  },
+  {
+    title: "Enterprise Design Thinking Practitioner",
+    issuer: "IBM",
+    issued: "2024",
+    summary: "Certified practitioner in IBM's Enterprise Design Thinking methodology for user-centered innovation.",
+    link: "#"
+  },
+  {
+    title: "Getting Started with Enterprise Data Science",
+    issuer: "IBM",
+    issued: "2024",
+    summary: "Foundation certification in enterprise-level data science methodologies and applications.",
+    link: "#"
+  },
+  {
     title: "Oracle Certified Professional – Generative AI",
     issuer: "Oracle University",
     credential: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",

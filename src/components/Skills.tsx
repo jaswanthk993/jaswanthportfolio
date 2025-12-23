@@ -7,6 +7,15 @@ interface SkillProgressProps {
   percentage: number;
 }
 const technicalSkills: SkillProgressProps[] = [{
+  name: "Gemini CLI",
+  percentage: 90
+}, {
+  name: "Google Cloud Run",
+  percentage: 88
+}, {
+  name: "Alloy DB",
+  percentage: 85
+}, {
   name: "Cloud Computing (AWS, Azure, GCP)",
   percentage: 90
 }, {
