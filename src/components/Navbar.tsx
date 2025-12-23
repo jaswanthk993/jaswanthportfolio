@@ -73,6 +73,12 @@ const Navbar = () => {
             Experience
           </Link>
           <Link
+            to="/#achievements"
+            className="text-gray-600 hover:text-[#2271FF] transition-colors"
+          >
+            Achievements
+          </Link>
+          <Link
             to="/#education"
             className="text-gray-600 hover:text-[#2271FF] transition-colors"
           >
@@ -163,6 +169,13 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               Experience
+            </Link>
+            <Link
+              to="/#achievements"
+              className="text-lg font-medium py-2 border-b border-gray-100"
+              onClick={toggleMenu}
+            >
+              Achievements
             </Link>
             <Link
               to="/#education"
