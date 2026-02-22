@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Education from "@/components/Education";
 import Projects from "@/components/Projects";
@@ -9,133 +8,89 @@ import Achievements from "@/components/Achievements";
 import Certificates from "@/components/Certificates";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import FloatingBackground from "@/components/FloatingBackground";
-import CursorParticles from "@/components/CursorParticles";
+import ActivationSequence from "@/components/ActivationSequence";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
-// Import the necessary dependencies
-import { motion, useScroll, useSpring } from "framer-motion";
-import { HoverAnimation } from "@/components/ui/hover-animation";
+const sectionAnim = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-80px" },
+  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+};
+
 const Index = () => {
-  const {
-    scrollYProgress
-  } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
   useEffect(() => {
-    // Scroll to section if URL has hash
     if (window.location.hash) {
       const id = window.location.hash.substring(1);
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({
-          behavior: "smooth"
-        });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   }, []);
-  return <div className="min-h-screen bg-background">
-      {/* 3D Floating Background */}
-      <FloatingBackground />
-      
-      {/* Cursor Particle Trail */}
-      <CursorParticles />
-      
-      {/* Progress Bar */}
-      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50 shadow-[0_0_20px_rgba(34,113,255,0.6)]" style={{
-      scaleX
-    }} />
-      
-      <HoverAnimation variant="lift" className="sticky top-0 z-40">
+
+  return (
+    <div className="min-h-screen bg-black">
+      {/* === ACTIVATION SEQUENCE === */}
+      <ActivationSequence />
+
+      {/* === POST-ACTIVATION PORTFOLIO (white/clean editorial) === */}
+      <div className="bg-white text-black relative z-10">
         <Navbar />
-      </HoverAnimation>
-      
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <Hero />
-      </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <About />
-      </motion.div>
+        {/* Identity Section */}
+        <section className="py-24 md:py-32 border-b border-black/5">
+          <div className="container mx-auto px-6">
+            <motion.div {...sectionAnim} className="max-w-4xl">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] text-black mb-6">
+                Product-Minded
+                <br />
+                <span className="text-black/30">AI Builder</span>
+              </h1>
+              <p className="text-lg md:text-xl text-black/60 max-w-2xl leading-relaxed">
+                Turning complex problems into simple, scalable solutions at the intersection of AI, cloud platforms, and product thinking.
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <Skills />
-      </motion.div>
+        <motion.div {...sectionAnim}>
+          <About />
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-        className="bg-slate-950"
-      >
-        <Projects />
-      </motion.div>
+        <motion.div {...sectionAnim}>
+          <Skills />
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <Experience />
-      </motion.div>
+        <motion.div {...sectionAnim}>
+          <Projects />
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <Education />
-      </motion.div>
+        <motion.div {...sectionAnim}>
+          <Experience />
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <Achievements />
-      </motion.div>
+        <motion.div {...sectionAnim}>
+          <Education />
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <Certificates />
-      </motion.div>
+        <motion.div {...sectionAnim}>
+          <Achievements />
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <Contact />
-      </motion.div>
+        <motion.div {...sectionAnim}>
+          <Certificates />
+        </motion.div>
 
-      <Footer />
-    </div>;
+        <motion.div {...sectionAnim}>
+          <Contact />
+        </motion.div>
+
+        <Footer />
+      </div>
+    </div>
+  );
 };
+
 export default Index;

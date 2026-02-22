@@ -1,112 +1,70 @@
-
-import { GraduationCap, CalendarDays, School, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { HoverAnimation } from "@/components/ui/hover-animation";
+import { GraduationCap } from "lucide-react";
 
-interface EducationItemProps {
-  institution: string;
-  degree: string;
-  duration: string;
-  description: string;
-  gpa?: string;
-  location?: string;
-}
-
-const educationData: EducationItemProps[] = [
+const educationData = [
   {
-    institution: "Godavari Institute of Engineering & Technology (GIET)",
-    degree: "B.Tech, Electrical and Electronics Engineering",
-    duration: "November 2021 - May 2025",
-    description: "Pursuing a B.Tech degree focusing on electrical and electronics engineering with additional coursework in programming and technology.",
+    institution: "GIET Engineering College",
+    degree: "B.Tech, Electrical & Electronics Engineering",
+    duration: "2021 – 2025",
     gpa: "7.40",
-    location: "Rajahmundry, India"
+    location: "Rajahmundry, India",
   },
   {
     institution: "Narayana Junior College",
-    degree: "Intermediate Education (MPC)",
-    duration: "June 2019 - May 2021",
-    description: "Completed intermediate education with a focus on Mathematics, Physics, and Chemistry.",
+    degree: "Intermediate (MPC)",
+    duration: "2019 – 2021",
     gpa: "71%",
-    location: "Rajahmundry, India"
+    location: "Rajahmundry, India",
   },
   {
     institution: "Government High School",
     degree: "School Education",
-    duration: "May 2019",
-    description: "Completed foundational education with excellence, developing core academic skills and fundamental knowledge.",
+    duration: "2019",
     gpa: "9.7",
-    location: "Rajahmundry, India"
-  }
+    location: "Rajahmundry, India",
+  },
 ];
-
-const EducationItem = ({ item, index }: { item: EducationItemProps, index: number }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="mb-8 last:mb-0"
-    >
-      <HoverAnimation variant="lift" delay={index * 50}>
-        <Card className="overflow-hidden border-primary/10 hover:border-primary/30 transition-colors">
-          <CardContent className="p-6">
-            <div className="flex items-start gap-4">
-              <div className="bg-primary/10 p-3 rounded-full text-primary flex-shrink-0 transition-colors hover:bg-primary hover:text-white">
-                {index === 0 ? <GraduationCap size={24} /> : 
-                index === 1 ? <BookOpen size={24} /> : 
-                <School size={24} />}
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">{item.institution}</h3>
-                <p className="text-lg font-medium text-foreground/90 mb-1">{item.degree}</p>
-                <div className="flex items-center text-sm text-foreground/70 mb-1">
-                  <CalendarDays size={16} className="mr-1" />
-                  <span>{item.duration}</span>
-                </div>
-                {item.location && (
-                  <p className="text-sm text-foreground/70 mb-3">
-                    Location: {item.location}
-                  </p>
-                )}
-                <p className="text-foreground/80">{item.description}</p>
-                {item.gpa && (
-                  <p className="mt-2 font-medium text-primary">
-                    GPA: {item.gpa}
-                  </p>
-                )}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </HoverAnimation>
-    </motion.div>
-  );
-};
 
 const Education = () => {
   return (
-    <section id="education" className="py-20 bg-primary/5">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Education</h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto">
-              My academic journey and qualifications that have shaped my knowledge and expertise.
+    <section id="education" className="py-20 md:py-28 border-b border-black/5 bg-black/[0.02]">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-3">
+            <p className="text-xs font-mono uppercase tracking-[0.3em] text-black/40 sticky top-24">
+              Education
             </p>
-          </motion.div>
-        </div>
+          </div>
 
-        <div className="max-w-3xl mx-auto">
-          {educationData.map((item, index) => (
-            <EducationItem key={index} item={item} index={index} />
-          ))}
+          <div className="lg:col-span-9 space-y-0">
+            {educationData.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                viewport={{ once: true }}
+                className="py-6 border-b border-black/5 last:border-none group"
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-1">
+                  <div className="flex items-start gap-3">
+                    <GraduationCap className="w-4 h-4 text-black/20 mt-1 shrink-0 group-hover:text-black/50 transition-colors" />
+                    <div>
+                      <h3 className="text-base font-bold text-black">{item.institution}</h3>
+                      <p className="text-sm text-black/50">{item.degree}</p>
+                    </div>
+                  </div>
+                  <div className="text-right md:ml-4 pl-7 md:pl-0">
+                    <p className="text-xs font-mono text-black/30">{item.duration}</p>
+                    <p className="text-xs text-black/40">{item.location}</p>
+                  </div>
+                </div>
+                {item.gpa && (
+                  <p className="text-xs font-mono text-black/40 pl-7 mt-1">GPA: {item.gpa}</p>
+                )}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
