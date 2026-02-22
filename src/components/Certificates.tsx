@@ -1,52 +1,150 @@
+import { Award, ExternalLink } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
 
 const certificates = [
-  { title: "Build Real World AI Applications with Gemini and Imagen", issuer: "Google Cloud", year: "2025" },
-  { title: "Azure AI Document Intelligence", issuer: "Microsoft", year: "2025" },
-  { title: "Postman API Fundamentals Student Expert", issuer: "Postman", year: "2025" },
-  { title: "Oracle Certified Professional – Generative AI", issuer: "Oracle University", year: "2025" },
-  { title: "Troubleshooter (L2) – Code Vipassana S11", issuer: "GDG Cloud Kochi", year: "2025" },
-  { title: "Exceptional Performance – Code Vipassana S10", issuer: "GDG Cloud Kochi", year: "2025" },
-  { title: "Oracle Certified – Multicloud Architecture", issuer: "Oracle University", year: "2025" },
-  { title: "Enterprise Design Thinking Practitioner", issuer: "IBM", year: "2024" },
-  { title: "Enterprise Data Science", issuer: "IBM", year: "2024" },
+  {
+    title: "Build Real World AI Applications with Gemini and Imagen",
+    issuer: "Google Cloud",
+    issued: "2025",
+    summary: "Certified in building production-ready AI applications using Google's Gemini and Imagen models for generative AI solutions.",
+    link: "#"
+  },
+  {
+    title: "Develop Solutions with Azure AI Document Intelligence",
+    issuer: "Microsoft",
+    issued: "2025",
+    summary: "Expertise in developing AI-powered document processing solutions using Azure AI Document Intelligence services.",
+    link: "#"
+  },
+  {
+    title: "Postman API Fundamentals Student Expert",
+    issuer: "Postman",
+    issued: "2025",
+    summary: "Certified as a Student Expert in API fundamentals, testing, and development using Postman.",
+    link: "#"
+  },
+  {
+    title: "Enterprise Design Thinking Practitioner",
+    issuer: "IBM",
+    issued: "2024",
+    summary: "Certified practitioner in IBM's Enterprise Design Thinking methodology for user-centered innovation.",
+    link: "#"
+  },
+  {
+    title: "Getting Started with Enterprise Data Science",
+    issuer: "IBM",
+    issued: "2024",
+    summary: "Foundation certification in enterprise-level data science methodologies and applications.",
+    link: "#"
+  },
+  {
+    title: "Oracle Certified Professional – Generative AI",
+    issuer: "Oracle University",
+    credential: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+    issued: "October 30, 2025",
+    validUntil: "October 30, 2027",
+    summary: "Recognized by Oracle Corporation for professional-level competency in Oracle Cloud Infrastructure and applied generative-AI capabilities.",
+    link: "#"
+  },
+  {
+    title: "Troubleshooter (L2) – Code Vipassana, Season 11",
+    issuer: "Google Developer Groups (GDG) Cloud Kochi",
+    issued: "2025",
+    summary: "Earned the L2 Troubleshooter badge for successfully resolving complex technical challenges in Season 11: AI Agents – Accelerate data-driven agents and applications with Gemini CLI & Serverless Runtimes.",
+    link: "#"
+  },
+  {
+    title: "Exceptional Performance – Code Vipassana, Season 10",
+    issuer: "Google Developer Groups (GDG) Cloud Kochi",
+    issued: "2025",
+    summary: "Awarded for exceptional mastery and applied capability in Season 10: AI Agents – Deep-dive into data-driven agents with Cloud Databases, Serverless Runtimes, and Open Source Frameworks.",
+    link: "#"
+  },
+  {
+    title: "Oracle Certified Professional – Multicloud Architecture",
+    issuer: "Oracle University",
+    credential: "Oracle Cloud Infrastructure 2025 Certified Multicloud Architect Professional",
+    issued: "September 1, 2025",
+    summary: "Recognized for expert-level understanding of OCI-based multicloud architectures and cross-platform cloud integration strategies.",
+    link: "#"
+  }
 ];
 
 const Certificates = () => {
   return (
-    <section id="certificates" className="py-20 md:py-28 border-b border-black/5">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-3">
-            <p className="text-xs font-mono uppercase tracking-[0.3em] text-black/40 sticky top-24">
-              Certificates
-            </p>
-          </div>
+    <section id="certificates" className="py-20 px-4 md:px-8 bg-background">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold mb-4 text-foreground">Certificates</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Professional certifications and recognition for technical excellence
+          </p>
+        </motion.div>
 
-          <div className="lg:col-span-9">
-            <div className="space-y-0">
-              {certificates.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.04 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-4 py-4 border-b border-black/5 last:border-none group"
-                >
-                  <Award className="w-4 h-4 text-black/20 mt-0.5 shrink-0 group-hover:text-black/50 transition-colors" />
-                  <div className="flex-1 flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                    <div>
-                      <p className="text-sm font-medium text-black/80">{cert.title}</p>
-                      <p className="text-xs text-black/40">{cert.issuer}</p>
+        <div className="grid gap-6 md:grid-cols-2">
+          {certificates.map((cert, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <CardTitle className="text-xl mb-2 flex items-start gap-2">
+                        <Award className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                        <span>{cert.title}</span>
+                      </CardTitle>
+                      <CardDescription className="text-base font-medium text-foreground/80">
+                        {cert.issuer}
+                      </CardDescription>
                     </div>
-                    <span className="text-xs font-mono text-black/25">{cert.year}</span>
+                    {cert.link && (
+                      <a 
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 transition-colors"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {cert.credential && (
+                    <p className="text-sm font-medium text-muted-foreground">
+                      <span className="text-foreground">Credential:</span> {cert.credential}
+                    </p>
+                  )}
+                  <div className="flex flex-wrap gap-2 text-sm">
+                    <Badge variant="secondary">
+                      Issued: {cert.issued}
+                    </Badge>
+                    {cert.validUntil && (
+                      <Badge variant="outline">
+                        Valid Until: {cert.validUntil}
+                      </Badge>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {cert.summary}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
